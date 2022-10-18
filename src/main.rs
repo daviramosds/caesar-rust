@@ -1,3 +1,5 @@
+use std::env;
+
 fn enc(text: &str, key: u8) -> String {
     let upper_text = text.to_uppercase();
     upper_text
@@ -12,6 +14,10 @@ fn enc(text: &str, key: u8) -> String {
 }
 
 fn main() {
-    let text = enc("", 3);
-    println!("{text}")
+    let args: Vec<String> = env::args().collect();
+
+    let text = &args[1];
+    
+    let enc = enc(text, 3);
+    println!("{enc}");
 }
