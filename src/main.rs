@@ -1,3 +1,7 @@
+fn enc(text: &str, key: u8) -> String {
+}
+
 fn main() {
-    println!("Hello World")
+    let text = enc("hello", 3);
+    println!("{text}")
 }
